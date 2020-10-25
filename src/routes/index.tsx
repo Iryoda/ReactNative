@@ -8,14 +8,8 @@ import { NavigationContainer } from '@react-navigation/native';
 
 const AppStack = () =>{
 
-    const {token } = useAuth();
-    const [sigIn, setSignIn] = React.useState(false);
+    const {token } = useAuth();;
 
-    useEffect(()=> {
-        if(token == null) setSignIn(false);
-        else setSignIn(true);
-    }, [token])
-     
     return(
         <NavigationContainer>
             {token ? <AuthRoutes/> : <AppRoutes/>}

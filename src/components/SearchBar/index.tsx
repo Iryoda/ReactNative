@@ -8,7 +8,7 @@ import { useActions } from '../../hooks/useActions';
 const SearchBar = () => {
 
     const [userInput, setUserInput] = React.useState('');
-    const { word, wordDefiner} = useActions();
+    const { wordDefiner} = useActions();
     
     useEffect(()=>{
         wordDefiner(userInput);

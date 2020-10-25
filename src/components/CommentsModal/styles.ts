@@ -83,3 +83,10 @@ export const ErroText = styled.Text`
     font-size: 15px;
     margin-bottom: 50px;
 `
+
+export const PostText = styled.Text`
+    color: white;
+    font-size: 15px;
+    font-family: 'Roboto_700Bold';
+
+`

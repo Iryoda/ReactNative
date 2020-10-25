@@ -13,6 +13,7 @@ export const Container = styled.View`
     width: 100%;
     height: 45%;
     padding: 20px;
+
 ` 
 export const MyButton = styled.TouchableOpacity`
     background: ${props=> props.theme.primary};
@@ -54,4 +55,10 @@ export const UserInput = styled.TextInput<Input>`
 export const MyButtonText = styled.Text`
     color: white;
     font-size: 20px;
+`
+
+export const ErroText = styled.Text`
+    color: red;
+    font-size: 20px;
+
 `

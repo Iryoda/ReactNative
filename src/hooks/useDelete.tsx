@@ -25,6 +25,9 @@ interface DeleteContextData{
             }
             }).then(() =>{
                 setErroOnDelete(false);
+                console.log(piuId);
+                console.log(token);
+
             }).catch(() =>{
                 setErroOnDelete(true);
             })
@@ -32,7 +35,7 @@ interface DeleteContextData{
 
 //return do Provider ------------------------------------------
       return(
-          <DeleteContext.Provider value = {{deleteComment:  deleteComment, erroOnDelete: erroOnDelete}}>
+          <DeleteContext.Provider value = {{deleteComment: deleteComment, erroOnDelete: erroOnDelete}}>
               {children}
           </DeleteContext.Provider>
       )

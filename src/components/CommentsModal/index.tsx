@@ -6,7 +6,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { usePost } from '../../hooks/usePost';
 
 import {Background, Content, CommentText, CommentInput, CommentButton, 
-        Container, CommentInputContainer, CountText, ErroText } from './styles';
+        Container, CommentInputContainer, CountText, ErroText, PostText } from './styles';
 
 const CommentModal = () =>{
 
@@ -67,7 +67,7 @@ const CommentModal = () =>{
                     <CommentButton
                         onPress= {() => handlePost()}
                         >
-                        <Text>Postar</Text>
+                        <PostText>Postar {">"}</PostText>
                     </CommentButton>
             </Content>
         </Container>

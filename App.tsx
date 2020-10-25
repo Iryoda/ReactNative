@@ -11,12 +11,20 @@ import { StatusBar } from 'expo-status-bar';
 
 
 const App: React.FC = () => {
+
+    let [fontsLoaded] = useFonts({
+      Roboto_400Regular,
+      Roboto_700Bold,
+    });
+    if(!fontsLoaded){
+      return <AppLoading/>
+    } else {
     return (
       <AppProvider>
         <StatusBar style="auto"/>
         <AppStack/>
       </AppProvider>
     );
-  }
+  }}
 export default App;
 

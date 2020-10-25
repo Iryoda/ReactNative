@@ -28,9 +28,9 @@ export const NavTabContainer = styled.View`
 `;
 
 export const NavTabImg = styled.Image`
-    height: 25px;
-    margin-bottom: 30px;
-  
+    align-self: auto;
+    width: 100%;
+    resizeMode: contain;
 `;
 
 export const NavTabText = styled.Text`

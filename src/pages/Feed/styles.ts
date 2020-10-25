@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { LinearGradient } from 'expo-linear-gradient'; 
 
 export const Father = styled.SafeAreaView`
     flex: 1;
@@ -6,6 +7,8 @@ export const Father = styled.SafeAreaView`
     height: 100%;
     justify-content: flex-start;
     background: ${props=> props.theme.background};
+    
+    font-family: 'Roboto_400Regular';
 `;
 
 export const Container = styled.View`

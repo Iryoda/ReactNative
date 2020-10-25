@@ -20,6 +20,7 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import hambIcon from '../../assets/img/hamburguer.png';
 import ConfirmModal from '../../components/ConfirmModal';
 
+
 const Feed = () => {
     
     let piusContent;
@@ -108,6 +109,7 @@ const Feed = () => {
             onPress = {() => handleCommentBox()}>
             <CommentText>+</CommentText>
         </CommentButton>
+ 
         <Father>
             <Container>
                 <Header>

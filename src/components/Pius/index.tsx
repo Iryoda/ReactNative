@@ -15,12 +15,10 @@ import heartIconPainted from '../../assets/img/heart_activated.png';
 import trashIcon from '../../assets/img/trash.png';
 
 import { useAuth } from '../../hooks/useAuth';
-import { Text } from 'react-native';
 import { usePost } from '../../hooks/usePost';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useDelete } from '../../hooks/useDelete';
 import { useActions } from '../../hooks/useActions';
-
 
 interface PiusProps{
     piu: Piu;

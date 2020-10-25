@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 
 import { Image, Text } from 'react-native';
 
-import { Container, MyButton, UserInput, InputBox, MyButtonText} from './styles';
+import { Container, MyButton, UserInput, InputBox, MyButtonText, ErroText} from './styles';
 
 import LogoIcon from '../../assets/img/logo.png';
 import eyeIconOpen from '../../assets/img/eyeOpen.png';
 import eyeIconClose from '../../assets/img/eyeClose.png';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useAuth } from '../../hooks/useAuth';
+
 
 const LoginBox = () => {
     
@@ -21,7 +22,7 @@ const LoginBox = () => {
     const [hidden, setHidden] = React.useState(true);
 
     if(erro){
-        erroMsg = "Cheque suas credencias!"
+        erroMsg = "Senha ou login incorretos!"
     } else {
         erroMsg = "";
     }
@@ -52,7 +53,7 @@ const LoginBox = () => {
                         />
                 </TouchableOpacity>
             </InputBox>
-            <Text>{erroMsg}</Text>
+            <ErroText>{erroMsg}</ErroText>
             <MyButton
                 onPress={()=> AuthRequest(username, password)}
                 >

@@ -52,7 +52,7 @@ export const Interactions = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-height: 32px;
+    height: 32px;
     padding: 5px 10px;
 
 `;
@@ -68,8 +68,9 @@ export const IconInfo = styled.Text`
 `
 
 export const IconImage = styled.Image`
-    width: 26px;
-    height: 26px;
+    height: 28px;
+    resizeMode: contain;
+
 `
 export const UserTextData = styled.Text`
     font-size: 20px;

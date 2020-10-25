@@ -56,7 +56,7 @@ export const AuthProvider: React.FC = ({children}) => {
             password: Yup.string().required('Senha obrigatoria'),
             });
 
-            await esquema.validate(AuthRequest(user, password), { abortEarly: false });
+            await esquema.validate(authRequest(user, password), { abortEarly: false });
     
         } catch (err) {
            console.log(err);
@@ -64,7 +64,7 @@ export const AuthProvider: React.FC = ({children}) => {
             
         }, []);
 // AuthRequest -----------------------------------------------------------
-    const AuthRequest = useCallback(async( user, password) => {
+    const authRequest = useCallback(async( user, password) => {
         await Axios({
             url: 'http://piupiuwer.polijr.com.br/login/',
             method: 'POST',
@@ -75,6 +75,8 @@ export const AuthProvider: React.FC = ({children}) => {
                 const { token } = res.data;
                 AsyncStorage.setItem('@Piupiuwer:token', token);  
                 AsyncStorage.setItem('@Piupiuwer:user', user );
+                setUserData({...userData, token});
+                getUser(user);
                 setErroState(false);
 
             }).catch(error => {
@@ -86,6 +88,8 @@ export const AuthProvider: React.FC = ({children}) => {
     const Logout = useCallback(async() => {
         await AsyncStorage.removeItem('@Piupiuwer:token');
         await AsyncStorage.removeItem('@Piupiuwer:user');
+        const token = '';
+        setUserData({...userData, token});
     }, []);
 
 //User -------------------------------------------------------------
@@ -105,7 +109,7 @@ export const AuthProvider: React.FC = ({children}) => {
                     token: userData.token,
                     userProps: userId,
                     logout: Logout,
-                    AuthRequest: AuthRequest,
+                    AuthRequest: authRequest,
                     getUser,
                     tokenRequest }}
         > 

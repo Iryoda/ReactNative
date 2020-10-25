@@ -3,8 +3,8 @@ import { Text } from 'react-native';
 import { useActions } from '../../hooks/useActions';
 import { useAuth } from '../../hooks/useAuth';
 import { useDelete } from '../../hooks/useDelete';
-import { Container } from '../PiuTemplate/styles';
-import { Background, ButtonContainer, ModalInput, ModalText } from './styles';
+
+import { Background, ButtonContainer, ModalInput, ModalText, Container } from './styles';
 
 const ConfirmModal =  () => {
 
@@ -20,7 +20,6 @@ const ConfirmModal =  () => {
             <Container>
                 <ModalText>Quer mesmo excluir este Piu?</ModalText>
                 <ButtonContainer>
-
                     <ModalInput 
                         color={false}
                         onPress={()=> handleModalConfirm(piuId)}
@@ -30,7 +29,7 @@ const ConfirmModal =  () => {
 
                     <ModalInput 
                         color={true}
-                        onPress={() => deleteComment(piuId, token)}
+                        onPress={() => {deleteComment(piuId, token); handleModalConfirm(piuId)}}
                         >
                         <Text>Sim</Text>
                     </ModalInput>
