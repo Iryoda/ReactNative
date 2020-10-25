@@ -1,21 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
+
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import AppProvider from './src/hooks';
+import AppStack from './src/routes/index';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import {AppLoading} from 'expo';
+import { Roboto_400Regular, Roboto_700Bold, useFonts} from '@expo-google-fonts/roboto';
+import { StatusBar } from 'expo-status-bar';
+
+
+const App: React.FC = () => {
+    return (
+      <AppProvider>
+        <StatusBar style="auto"/>
+        <AppStack/>
+      </AppProvider>
+    );
+  }
+export default App;
+
